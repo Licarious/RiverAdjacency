@@ -22,14 +22,11 @@
 	this = title:b_woxbrigge.title_province
 	this = title:b_gore.title_province
 	this = title:b_brentford.title_province
-	this = title:b_maldon.title_province
 	this = title:b_chelmsford.title_province
 	this = title:b_wycombe.title_province
 	this = title:b_pockington.title_province
-	this = title:b_cottingham.title_province
 	this = title:b_doncaster.title_province
 	this = title:b_lincoln.title_province
-	this = title:b_bolingsbroke.title_province
 	this = title:b_grimsby.title_province
 	this = title:b_warwick.title_province
 	this = title:b_coventry.title_province
@@ -48,15 +45,12 @@
 	this = title:b_shrewsbury.title_province
 	this = title:b_ludlow.title_province
 	this = title:b_bishops_castle.title_province
-	this = title:b_gloucester.title_province
-	this = title:b_bristol.title_province
 	this = title:b_winchcombe.title_province
 	this = title:b_oxford.title_province
 	this = title:b_banbury.title_province
 	this = title:b_witney.title_province
 	this = title:b_reading.title_province
 	this = title:b_abingdon.title_province
-	this = title:b_rochester.title_province
 	this = title:b_chertsey.title_province
 	this = title:b_kingston.title_province
 	this = title:b_welshpool.title_province
@@ -64,11 +58,7 @@
 	this = title:b_rhayader.title_province
 	this = title:b_athlone.title_province
 	this = title:b_birr.title_province
-	this = title:b_sligo.title_province
-	this = title:b_athenry.title_province
 	this = title:b_longford.title_province
-	this = title:b_limerick.title_province
-	this = title:b_ennis.title_province
 	this = title:b_nenagh.title_province
 #e_germany
 	this = title:b_dessau.title_province
@@ -127,29 +117,19 @@
 	this = title:b_duben.title_province
 	this = title:b_spreewald.title_province
 	this = title:b_stade.title_province
-	this = title:b_bederkesa.title_province
-	this = title:b_cuxhaven.title_province
-	this = title:b_ditmarschen.title_province
-	this = title:b_itzehoe.title_province
 	this = title:b_beichtinen.title_province
 	this = title:b_gottingen.title_province
 	this = title:b_orlamunde.title_province
 	this = title:b_schwarzburg.title_province
 	this = title:b_lobdaburg.title_province
-	this = title:b_dort.title_province
 	this = title:b_geldern.title_province
 	this = title:b_nijmegen.title_province
 	this = title:b_tiel.title_province
 	this = title:b_arnhem.title_province
-	this = title:b_harderwijk.title_province
 	this = title:b_zutphen.title_province
 	this = title:b_zwolle.title_province
-	this = title:b_kampen.title_province
 	this = title:b_coevorden.title_province
 	this = title:b_emmen.title_province
-	this = title:b_delfzijl.title_province
-	this = title:b_emden.title_province
-	this = title:b_varel.title_province
 	this = title:b_luxembourg.title_province
 	this = title:b_vianden.title_province
 	this = title:b_bouillon.title_province
@@ -160,7 +140,6 @@
 	this = title:b_namur.title_province
 	this = title:b_couvin.title_province
 	this = title:b_brussels.title_province
-	this = title:b_antwerpen.title_province
 	this = title:b_tournai.title_province
 	this = title:b_ath.title_province
 	this = title:b_cambrai.title_province
@@ -173,7 +152,6 @@
 	this = title:b_moers.title_province
 	this = title:b_maastricht.title_province
 	this = title:b_eindhoven.title_province
-	this = title:b_tilburg.title_province
 	this = title:b_trier.title_province
 	this = title:b_beda.title_province
 	this = title:b_konz.title_province
@@ -322,10 +300,6 @@
 	this = title:b_tutrakan.title_province
 	this = title:b_lom.title_province
 	this = title:b_orehovo.title_province
-	this = title:b_constanta.title_province
-	this = title:b_tulcha.title_province
-	this = title:b_sulina.title_province
-	this = title:b_mangalia.title_province
 	this = title:b_tovuz.title_province
 	this = title:b_shamkur.title_province
 	this = title:b_ktis.title_province
@@ -341,7 +315,6 @@
 #e_italy
 	this = title:b_verona.title_province
 	this = title:b_rovigo.title_province
-	this = title:b_adria.title_province
 	this = title:b_asti.title_province
 	this = title:b_turin.title_province
 	this = title:b_chieri.title_province
@@ -360,7 +333,6 @@
 	this = title:b_brescello.title_province
 	this = title:b_cona.title_province
 	this = title:b_ferrara.title_province
-	this = title:b_pomposa.title_province
 #e_scandinavia
 	this = title:b_tingvalla.title_province
 	this = title:b_friskdal.title_province
@@ -370,15 +342,12 @@
 	this = title:b_lima.title_province
 	this = title:b_lodose.title_province
 	this = title:b_falkoping.title_province
-	this = title:b_kungahalla.title_province
 	this = title:b_lacko.title_province
 	this = title:b_skara.title_province
 	this = title:b_varnhem.title_province
 	this = title:b_dalaborg.title_province
 	this = title:b_tisselskog.title_province
 	this = title:b_gillberg.title_province
-	this = title:b_sudherkopung.title_province
-	this = title:b_hamarkinda.title_province
 	this = title:b_vreta.title_province
 	this = title:b_norrkoping.title_province
 	this = title:b_liunga.title_province
@@ -387,27 +356,13 @@
 	this = title:b_riseberga.title_province
 	this = title:b_wisinghnso.title_province
 	this = title:b_jonkoping.title_province
-	this = title:b_bagahus.title_province
-	this = title:b_haugelandi.title_province
-	this = title:b_bjorgvin.title_province
-	this = title:b_northrihordalandi.title_province
-	this = title:b_sunnhordalandi.title_province
 	this = title:b_hardanger.title_province
 	this = title:b_voss.title_province
 	this = title:b_sognfylki.title_province
 	this = title:b_stolsheimen.title_province
-	this = title:b_bremanger.title_province
-	this = title:b_dale.title_province
 	this = title:b_fjarlandi.title_province
 	this = title:b_suthri_eystridali.title_province
-	this = title:b_soutjarvi.title_province
-	this = title:b_aunus.title_province
-	this = title:b_kem.title_province
-	this = title:b_soma.title_province
 	this = title:b_tungut.title_province
-	this = title:b_seesjarvi.title_province
-	this = title:b_narva.title_province
-	this = title:b_uxkull.title_province
 	this = title:b_tartu.title_province
 	this = title:b_poltsamaa.title_province
 	this = title:b_vastseliina.title_province
@@ -475,7 +430,6 @@
 	this = title:b_szczecin.title_province
 	this = title:b_ucramund.title_province
 	this = title:b_gryfino.title_province
-	this = title:b_swinoujscie.title_province
 	this = title:b_stargad.title_province
 	this = title:b_soldin.title_province
 	this = title:b_kostschin.title_province
@@ -484,8 +438,6 @@
 	this = title:b_landsberg.title_province
 	this = title:b_driesen.title_province
 	this = title:b_schwerin.title_province
-	this = title:b_wolgast.title_province
-	this = title:b_gdansk.title_province
 	this = title:b_trsow.title_province
 	this = title:b_schwetz.title_province
 	this = title:b_brandenburg.title_province
@@ -506,10 +458,8 @@
 	this = title:b_braslau.title_province
 	this = title:b_marienburg.title_province
 	this = title:b_graudenz.title_province
-	this = title:b_wislana.title_province
 	this = title:b_kulm.title_province
 	this = title:b_torun.title_province
-	this = title:b_riga.title_province
 	this = title:b_mitau.title_province
 	this = title:b_selpils.title_province
 	this = title:b_oknist.title_province
@@ -523,8 +473,6 @@
 	this = title:b_veliuona.title_province
 	this = title:b_kedainiai.title_province
 	this = title:b_ragnit.title_province
-	this = title:b_tilsit.title_province
-	this = title:b_memel.title_province
 	this = title:b_taurage.title_province
 #e_russia
 	this = title:b_volodymyr.title_province
@@ -584,7 +532,6 @@
 	this = title:b_odoyev.title_province
 	this = title:b_suvorov.title_province
 	this = title:b_novgorod.title_province
-	this = title:b_ladoga.title_province
 	this = title:b_lyuban.title_province
 	this = title:b_rusa.title_province
 	this = title:b_loknya.title_province
@@ -594,14 +541,10 @@
 	this = title:b_gdov.title_province
 	this = title:b_sebezh.title_province
 	this = title:b_nevel.title_province
-	this = title:b_yama.title_province
 	this = title:b_beloozero.title_province
 	this = title:b_cherepovets.title_province
 	this = title:b_ves_yogonska.title_province
-	this = title:b_kirishi.title_province
 	this = title:b_svolensk.title_province
-	this = title:b_vyangi.title_province
-	this = title:b_podporozhye.title_province
 	this = title:b_luki.title_province
 	this = title:b_kholm_NOV.title_province
 	this = title:b_seltsa_u_nishi.title_province
@@ -672,12 +615,7 @@
 	this = title:b_manturovo.title_province
 	this = title:b_kostroma.title_province
 	this = title:b_kholmogory.title_province
-	this = title:b_arkhangelsk.title_province
 	this = title:b_brin_navolok.title_province
-	this = title:b_pertominsk.title_province
-	this = title:b_povenets.title_province
-	this = title:b_malenga.title_province
-	this = title:b_vitzgora.title_province
 	this = title:b_ostrov_BJA.title_province
 	this = title:b_kirillov.title_province
 	this = title:b_pelsina.title_province
@@ -703,9 +641,7 @@
 	this = title:b_verkola.title_province
 	this = title:b_osmova.title_province
 #e_caspian-pontic_steppe
-	this = title:b_odessa.title_province
 	this = title:b_tiraspol.title_province
-	this = title:b_olbia_ETEL.title_province
 	this = title:b_ladyzyn.title_province
 	this = title:b_birzula.title_province
 	this = title:b_liubashivka.title_province
@@ -715,18 +651,15 @@
 	this = title:b_sacacatce.title_province
 	this = title:b_kashan.title_province
 	this = title:b_pervomaisk.title_province
-	this = title:b_kherson.title_province
 	this = title:b_voznessensk.title_province
 	this = title:b_dnipro.title_province
 	this = title:b_beryslav.title_province
 	this = title:b_nikopol.title_province
 	this = title:b_salmacatce.title_province
 	this = title:b_khortytsia.title_province
-	this = title:b_oleshye.title_province
 	this = title:b_kakovka.title_province
 	this = title:b_samar.title_province
 	this = title:b_karlivka.title_province
-	this = title:b_tana.title_province
 	this = title:b_golden_hills.title_province
 	this = title:b_siyahtepe.title_province
 	this = title:b_ust-donvokhi.title_province
@@ -738,19 +671,15 @@
 	this = title:b_yelan.title_province
 	this = title:b_aksay.title_province
 	this = title:b_semikarakary.title_province
-	this = title:b_astrakhan.title_province
 	this = title:b_khazaran.title_province
 	this = title:b_beksima.title_province
 	this = title:b_sarepta.title_province
 	this = title:b_yenotayevka.title_province
-	this = title:b_azov.title_province
 	this = title:b_manych.title_province
 	this = title:b_itil.title_province
 	this = title:b_saray.title_province
 	this = title:b_nikolaievsk.title_province
 	this = title:b_chyorny_yar.title_province
-	this = title:b_saqsin.title_province
-	this = title:b_saraychiq.title_province
 	this = title:b_ukek.title_province
 	this = title:b_engels.title_province
 	this = title:b_ilekskoi_gorodok.title_province
@@ -815,12 +744,9 @@
 	this = title:b_iletsk.title_province
 	this = title:b_santas.title_province
 	this = title:b_barbastau.title_province
-	this = title:b_atyrau.title_province
 	this = title:b_taisugan.title_province
 	this = title:b_manatau.title_province
 #e_turan
-	this = title:b_yangikent.title_province
-	this = title:b_kazalinsk.title_province
 	this = title:b_raimskoe.title_province
 	this = title:b_kara-mugai.title_province
 	this = title:b_jend.title_province
@@ -856,7 +782,6 @@
 	this = title:b_nazvar.title_province
 	this = title:b_zamakhshar.title_province
 	this = title:b_jith.title_province
-	this = title:b_madminiya.title_province
 	this = title:b_vezir.title_province
 	this = title:b_darghan.title_province
 	this = title:b_tahiriya=.title_province
@@ -869,7 +794,6 @@
 	this = title:b_karduran-khas.title_province
 	this = title:b_ruzvand.title_province
 	this = title:b_kurdar.title_province
-	this = title:b_baratigin.title_province
 	this = title:b_mizdahqan.title_province
 	this = title:b_kurtysh.title_province
 	this = title:b_sarykamysh=.title_province
@@ -878,10 +802,8 @@
 	this = title:b_bala_iskem=.title_province
 	this = title:b_igdy.title_province
 	this = title:b_burgun.title_province
-	this = title:b_cheleken=.title_province
 	this = title:b_dekcha.title_province
 	this = title:b_yashkan.title_province
-	this = title:b_nebit_dag.title_province
 #e_bactria
 #e_persia
 	this = title:b_ahvaz.title_province
@@ -891,9 +813,7 @@
 	this = title:b_gondishapur.title_province
 	this = title:b_dizful.title_province
 	this = title:b_as-sus.title_province
-	this = title:b_abbadan.title_province
 	this = title:b_bayan.title_province
-	this = title:b_basiyan.title_province
 	this = title:b_azam.title_province
 	this = title:b_kerend-kermanshah.title_province
 	this = title:b_andamish.title_province
@@ -908,14 +828,11 @@
 	this = title:b_talekan.title_province
 	this = title:b_mila.title_province
 	this = title:b_dizmar.title_province
-	this = title:b_maras.title_province
-	this = title:b_salyan.title_province
 	this = title:b_kudevan.title_province
 	this = title:b_paidangaran.title_province
 	this = title:b_ganja.title_province
 	this = title:b_mingachevir.title_province
 	this = title:b_barda.title_province
-	this = title:b_paytakaran.title_province
 	this = title:b_gabarawan.title_province
 	this = title:b_varsan.title_province
 	this = title:b_nakorzan.title_province
@@ -942,7 +859,6 @@
 	this = title:b_as-saliq.title_province
 	this = title:b_as-salman.title_province
 	this = title:b_al-akhadid.title_province
-	this = title:b_bajlan.title_province
 	this = title:b_al-ubulla.title_province
 	this = title:b_matara-iraq.title_province
 	this = title:b_ar-rusafa-iraq.title_province
@@ -1050,9 +966,7 @@
 	this = title:b_bacau.title_province
 	this = title:b_tigheci.title_province
 	this = title:b_cahul.title_province
-	this = title:b_cetatea_alba.title_province
 	this = title:b_tighina.title_province
-	this = title:b_oblucita.title_province
 	this = title:b_lapusna.title_province
 	this = title:b_chisinau.title_province
 	this = title:b_visegrad_hun.title_province
@@ -1149,10 +1063,8 @@
 	this = title:b_melay.title_province
 	this = title:b_rouen.title_province
 	this = title:b_gisors.title_province
-	this = title:b_harcourt.title_province
 	this = title:b_evreux.title_province
 	this = title:b_vernon.title_province
-	this = title:b_fecamp.title_province
 	this = title:b_orleans.title_province
 	this = title:b_beaugency.title_province
 	this = title:b_olivet.title_province
@@ -1204,10 +1116,8 @@
 	this = title:b_grand.title_province
 	this = title:b_vaucouleurs.title_province
 	this = title:b_toul.title_province
-	this = title:b_gent.title_province
 	this = title:b_courtrai.title_province
 	this = title:b_bordeaux.title_province
-	this = title:b_medoc.title_province
 	this = title:b_blaye.title_province
 	this = title:b_fronsac.title_province
 	this = title:b_langon.title_province
@@ -1227,7 +1137,6 @@
 	this = title:b_cahors.title_province
 	this = title:b_figeac.title_province
 	this = title:b_uses.title_province
-	this = title:b_nimes.title_province
 	this = title:b_lectoure.title_province
 	this = title:b_lomagne.title_province
 	this = title:b_poitiers.title_province
@@ -1238,14 +1147,10 @@
 	this = title:b_jaligny.title_province
 	this = title:b_grandmont.title_province
 	this = title:b_nantes.title_province
-	this = title:b_rais.title_province
-	this = title:b_guerande.title_province
 	this = title:b_chateaubriant.title_province
-	this = title:b_arles.title_province
 	this = title:b_orange.title_province
 	this = title:b_avignon.title_province
 	this = title:b_castellane.title_province
-	this = title:b_aix.title_province
 	this = title:b_apt.title_province
 	this = title:b_chambery.title_province
 	this = title:b_belley.title_province
@@ -1276,10 +1181,7 @@
 	this = title:b_cabra.title_province
 	this = title:b_sevilla.title_province
 	this = title:b_carmona.title_province
-	this = title:b_almonte.title_province
 	this = title:b_triana.title_province
-	this = title:b_jerez.title_province
-	this = title:b_ayamonte.title_province
 	this = title:b_moura.title_province
 	this = title:b_serpa.title_province
 	this = title:b_toledo.title_province
@@ -1294,9 +1196,6 @@
 	this = title:b_lapueblademontalban.title_province
 	this = title:b_mora.title_province
 	this = title:b_ocana.title_province
-	this = title:b_lisboa.title_province
-	this = title:b_santarem.title_province
-	this = title:b_setubal.title_province
 	this = title:b_evora.title_province
 	this = title:b_beja.title_province
 	this = title:b_montemor.title_province
@@ -1317,9 +1216,7 @@
 	this = title:b_castilblanco.title_province
 	this = title:b_medellin.title_province
 	this = title:b_donllorente.title_province
-	this = title:b_faro.title_province
 	this = title:b_mertola.title_province
-	this = title:b_amposta.title_province
 	this = title:b_valladolid.title_province
 	this = title:b_simancas.title_province
 	this = title:b_arandadeduero.title_province
@@ -1337,7 +1234,6 @@
 	this = title:b_lleida.title_province
 	this = title:b_balaguer.title_province
 	this = title:b_maials.title_province
-	this = title:b_tortosa.title_province
 	this = title:b_prades.title_province
 	this = title:b_tafalla.title_province
 	this = title:b_lizarra.title_province
@@ -1350,12 +1246,10 @@
 	this = title:b_salamanca.title_province
 	this = title:b_ciduadrodrigo.title_province
 	this = title:b_avila.title_province
-	this = title:b_porto.title_province
 	this = title:b_guimaraes.title_province
 	this = title:b_miranda_do_duoro.title_province
 	this = title:b_villa_real.title_province
 	this = title:b_mogadouro.title_province
-	this = title:b_aveiro.title_province
 	this = title:b_gralheira.title_province
 	this = title:b_lamego.title_province
 	this = title:b_castelo_branco.title_province
@@ -1364,20 +1258,15 @@
 #e_maghreb
 	this = title:b_bahr_el-ghazzal_route.title_province
 #e_arabia
-	this = title:b_dumiyat.title_province
 	this = title:b_daqahla.title_province
-	this = title:b_rashid.title_province
 	this = title:b_damanhur.title_province
 	this = title:b_ramsis.title_province
 	this = title:b_minuf.title_province
-	this = title:b_samannud.title_province
-	this = title:b_nastarawa.title_province
 	this = title:b_ibyar.title_province
 	this = title:b_bilbays.title_province
 	this = title:b_qalyub.title_province
 	this = title:b_faqus.title_province
 	this = title:b_cairo.title_province
-	this = title:b_quzlum.title_province
 	this = title:b_atfih.title_province
 	this = title:b_hulwan-cairo.title_province
 	this = title:b_gizeh.title_province
@@ -1402,7 +1291,6 @@
 	this = title:b_udfu.title_province
 	this = title:b_zarnikh.title_province
 	this = title:b_aswan-west.title_province
-	this = title:b_farama.title_province
 	this = title:b_manbij.title_province
 	this = title:b_buzaa.title_province
 	this = title:b_siffin.title_province
@@ -1494,15 +1382,12 @@
 #e_kanem_bornu
 	this = title:b_tie.title_province
 	this = title:b_tarazki.title_province
-	this = title:b_auno.title_province
 	this = title:b_gazargamo.title_province
 	this = title:b_gambaru.title_province
 	this = title:b_diakam.title_province
-	this = title:b_ajere.title_province
 	this = title:b_gaskeru.title_province
 	this = title:b_diffa.title_province
 	this = title:b_yau.title_province
-	this = title:b_kukawa.title_province
 	this = title:b_zamtam.title_province
 	this = title:b_nguru.title_province
 	this = title:b_gombe.title_province
@@ -1510,7 +1395,6 @@
 	this = title:b_azare.title_province
 	this = title:b_kudu.title_province
 	this = title:b_gabas.title_province
-	this = title:b_baguirmi-west.title_province
 	this = title:b_baguirmi.title_province
 	this = title:b_banre.title_province
 	this = title:b_migri.title_province
@@ -1527,7 +1411,6 @@
 	this = title:b_miltou.title_province
 	this = title:b_niellim.title_province
 	this = title:b_boa.title_province
-	this = title:b_makari.title_province
 	this = title:b_kousseri.title_province
 	this = title:b_bogo.title_province
 	this = title:b_kalfou.title_province
@@ -1606,7 +1489,6 @@
 	this = title:b_upper_bafing.title_province
 	this = title:b_takrur.title_province
 	this = title:b_waram.title_province
-	this = title:b_awlil.title_province
 	this = title:b_dagana.title_province
 	this = title:b_silla.title_province
 	this = title:b_ogo.title_province
@@ -1615,7 +1497,6 @@
 	this = title:b_wompu.title_province
 	this = title:b_bakel.title_province
 	this = title:b_arondo.title_province
-	this = title:b_waalo.title_province
 	this = title:b_jenne-jeno.title_province
 	this = title:b_kaniana.title_province
 	this = title:b_mopti.title_province
@@ -1636,18 +1517,13 @@
 	this = title:b_kiang.title_province
 	this = title:b_pakao.title_province
 	this = title:b_pakala.title_province
-	this = title:b_niumi.title_province
 	this = title:b_badibu.title_province
 	this = title:b_kasa.title_province
-	this = title:b_pepel.title_province
-	this = title:b_jagara.title_province
-	this = title:b_kombo.title_province
 	this = title:b_fogny.title_province
 	this = title:b_bainuk.title_province
 	this = title:b_achum.title_province
 	this = title:b_birasu.title_province
 	this = title:b_mansoa.title_province
-	this = title:b_guinala.title_province
 #e_guinea
 	this = title:b_baoule.title_province
 	this = title:b_degou.title_province
@@ -1661,9 +1537,7 @@
 	this = title:b_begho.title_province
 	this = title:b_banda.title_province
 	this = title:b_kwahu-south.title_province
-	this = title:b_shai.title_province
 	this = title:b_wusuta.title_province
-	this = title:b_keta.title_province
 	this = title:b_bassa-afram.title_province
 	this = title:b_afram.title_province
 	this = title:b_akpafu.title_province
@@ -1699,9 +1573,6 @@
 	this = title:b_igala.title_province
 	this = title:b_ibah.title_province
 	this = title:b_east_igala.title_province
-	this = title:b_bonny.title_province
-	this = title:b_okrika.title_province
-	this = title:b_nembe.title_province
 	this = title:b_raba.title_province
 	this = title:b_bida.title_province
 	this = title:b_kulfo.title_province
@@ -1727,9 +1598,7 @@
 	this = title:b_gbagye.title_province
 #e_india
 #e_rajastan
-	this = title:b_debul.title_province
 	this = title:b_thatta.title_province
-	this = title:b_shahbandar.title_province
 	this = title:b_nirun.title_province
 	this = title:b_sonda.title_province
 	this = title:b_mansura.title_province
@@ -1819,8 +1688,6 @@
 	this = title:b_vadnagar.title_province
 	this = title:b_siddhapura.title_province
 	this = title:b_khetaka.title_province
-	this = title:b_khambhat.title_province
-	this = title:b_dholka.title_province
 	this = title:b_ashaval.title_province
 	this = title:b_mohadavasaka.title_province
 	this = title:b_jhalod.title_province
@@ -1828,9 +1695,6 @@
 	this = title:b_vadodara.title_province
 	this = title:b_kayavarohan.title_province
 	this = title:b_darbhavati.title_province
-	this = title:b_akruresvara.title_province
-	this = title:b_navasarika.title_province
-	this = title:b_bharuch.title_province
 	this = title:b_tadkeshwar.title_province
 	this = title:b_rajpipla.title_province
 	this = title:b_nandurbar.title_province
@@ -1934,19 +1798,13 @@
 	this = title:b_ekdala.title_province
 	this = title:b_fathabad.title_province
 	this = title:b_chandpur.title_province
-	this = title:b_candradvipa.title_province
-	this = title:b_ishwaripur.title_province
 	this = title:b_mainamati.title_province
-	this = title:b_devaparvata.title_province
 	this = title:b_nabadwipa.title_province
 	this = title:b_attahasa.title_province
 	this = title:b_santipura.title_province
 	this = title:b_saptagrama.title_province
 	this = title:b_pandua.title_province
 	this = title:b_kumarhati.title_province
-	this = title:b_tamralipti.title_province
-	this = title:b_chatrabhog.title_province
-	this = title:b_chandraketugarh.title_province
 	this = title:b_kamarupanagara.title_province
 	this = title:b_manikuta.title_province
 	this = title:b_pragyotisapura.title_province
@@ -2005,11 +1863,9 @@
 	this = title:b_pali.title_province
 	this = title:b_bandhugadha.title_province
 	this = title:b_soubhagyapura.title_province
-	this = title:b_katak.title_province
 	this = title:b_bhubaneswar.title_province
 	this = title:b_dhauli.title_province
 	this = title:b_athgarh.title_province
-	this = title:b_ratnagiri.title_province
 	this = title:b_khinjali.title_province
 	this = title:b_nilamadhav.title_province
 	this = title:b_kodalaka.title_province
@@ -2049,12 +1905,7 @@
 	this = title:b_thayetmyo.title_province
 	this = title:b_taungdwingyi.title_province
 	this = title:b_magwe.title_province
-	this = title:b_hinthada.title_province
-	this = title:b_myanaung.title_province
 	this = title:b_tharrawaddy.title_province
-	this = title:b_krapan.title_province
-	this = title:b_bogale.title_province
-	this = title:b_myaungmya.title_province
 #e_deccan
 	this = title:b_devagiri.title_province
 	this = title:b_pratishthana.title_province
@@ -2104,41 +1955,28 @@
 	this = title:b_karavur.title_province
 	this = title:b_tiruppur.title_province
 	this = title:b_uraiyur.title_province
-	this = title:b_tanjavur.title_province
 	this = title:b_tirukoilur.title_province
 	this = title:b_kannanur_2.title_province
-	this = title:b_gangaikondacolapuram.title_province
-	this = title:b_nagapattinam.title_province
 	this = title:b_tagadur.title_province
 	this = title:b_kelrayan.title_province
 	this = title:b_srirangam.title_province
 	this = title:b_tiruvannamalai.title_province
 	this = title:b_kudalasangama_bis.title_province
-	this = title:b_uttaramerur.title_province
-	this = title:b_jinji.title_province
 	this = title:b_muluvagil.title_province
 	this = title:b_takkaloma.title_province
-	this = title:b_mamallapuram.title_province
 	this = title:b_penugonda.title_province
-	this = title:b_nellore.title_province
 	this = title:b_vallurapura.title_province
 	this = title:b_togarakunta.title_province
 	this = title:b_anantapur.title_province
 	this = title:b_puspagiri.title_province
-	this = title:b_udayagiri.title_province
-	this = title:b_nilagiri.title_province
 	this = title:b_ittagi.title_province
 	this = title:b_sriparvata.title_province
 	this = title:b_mudivemu.title_province
 	this = title:b_ahobalam.title_province
 	this = title:b_amaravati.title_province
 	this = title:b_pondugala.title_province
-	this = title:b_vengipura.title_province
-	this = title:b_vijayawada.title_province
 	this = title:b_polavaram.title_province
 	this = title:b_ellur.title_province
-	this = title:b_rajamahendravaram.title_province
-	this = title:b_draksharama.title_province
 	this = title:b_kambampet.title_province
 	this = title:b_palampet.title_province
 	this = title:b_vinukonda.title_province

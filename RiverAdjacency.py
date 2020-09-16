@@ -10,8 +10,10 @@ class ProvinceDefinition:
     lastKnownY = -1
 
 riverList = []
+seaList = []
 tmpRiverList = []
 riverProvList = []
+seaProvList = []
 provList = []
 mapDefinition = open("Input/definition.csv")
 defaultMap = open("Input/default.map")
@@ -19,6 +21,7 @@ provMap = Image.open("Input/provinces.png")
 landedTitles = open("Input/00_landed_titles.txt",'r',encoding='utf-8',errors='ignore')
 borderIDList = []
 total=0
+removeCostal = True
 
 def readProvinceDeff():
     for province in mapDefinition:
@@ -41,6 +44,36 @@ def getRiverProvinces():
     for line in defaultMap:
         if line.strip().startswith("#"):
             pass
+        elif line.strip().startswith("sea_zones"):
+            if "RANGE" in line:
+                x1=0
+                x2=0
+                #print(line)
+                words = line.split(" ")
+                for word in words:
+                    if "#" in word:
+                        break
+                    else:
+                        try:
+                            if x1 == 0:
+                                x1 = int(word)
+                            elif x2 == 0:
+                                x2 = int(word)
+                        except:
+                            pass
+                for i in range(x1,x2+1):
+                    seaList.append(i)
+                #print("%s,%s"%(x1,x2))
+            elif "LIST" in line:
+                words = line.split(" ")
+                for word in words:
+                    if "#" in word:
+                        break
+                    else:
+                        try:
+                            seaList.append(int(word))
+                        except:
+                            pass
         elif line.strip().startswith("river_provinces"):
             if "RANGE" in line:
                 x1=0
@@ -73,7 +106,7 @@ def getRiverProvinces():
                             pass
                 #print(line)
     pass      
-def drawRiverMat(riverProvList):
+def drawRiverMat(riverProvList,name):
     xRange= range(0,provMap.size[0],1)
     yRange= range(0,provMap.size[1],1)
     drawReader = provMap.load()
@@ -81,6 +114,9 @@ def drawRiverMat(riverProvList):
     drawingMap.putalpha(0)
     riverMat = drawingMap.load()
     z=0
+    dis = 1
+    if sea in name:
+        dis *= 4 
     for prov in riverProvList:
         provinceEnd = False
         z+=1
@@ -94,13 +130,16 @@ def drawRiverMat(riverProvList):
                         riverMat[x,y] = (0,0,0)
                         prov.lastKnownY = y
                         #print("%s - %i,%i"%(prov.name,x,y))
-                if prov.lastKnownY > -1 and y > prov.lastKnownY + (provMap.size[1] * 1/256):
+                if prov.lastKnownY > -1 and y > prov.lastKnownY + (provMap.size[1] * dis/256):
                     provinceEnd = True
-    drawingMap.save("Output/RiverMat.png")
-def drawRiverBorderMat():
+    drawingMap.save("Output/%s.png"%name)
+def drawRiverBorderMat(name):
     xRange= range(0,provMap.size[0],1)
     yRange= range(0,provMap.size[1],1)
-    tmpDrawingMap = Image.open("Output/RiverMat.png")
+    if "river" in name:
+        tmpDrawingMap = Image.open("Output/RiverMat.png")
+    else:
+        tmpDrawingMap = Image.open("Output/SeaMat.png")
     drawReader = tmpDrawingMap.load()
     drawingBorderMap = Image.open("Input/provinces.png")
     drawingBorderMap.putalpha(0)
@@ -112,22 +151,25 @@ def drawRiverBorderMat():
                 if y>0:
                     if not drawReader[x,y-1] == (0,0,0,255):
                         riverBorderMat[x,y-1] = (0,0,0)
-                if y<provMap.size[1]:
+                if y<provMap.size[1]-1:
                     if not drawReader[x,y+1] == (0,0,0,255):
                         riverBorderMat[x,y+1] = (0,0,0)
                 if x>0:
                     if not drawReader[x-1,y] == (0,0,0,255):
                         riverBorderMat[x-1,y] = (0,0,0)
-                if x<provMap.size[0]:
+                if x<provMap.size[0]-1:
                     if not drawReader[x+1,y] == (0,0,0,255):
                         riverBorderMat[x+1,y] = (0,0,0)
                 #print("%s - %i,%i"%(prov.name,x,y))
-    drawingBorderMap.save("Output/RiverBorderMat.png")
-def getBorderIDs():
+    drawingBorderMap.save("Output/%s.png"%name)
+def getBorderIDs(name):
     xRange= range(0,provMap.size[0],1)
     yRange= range(0,provMap.size[1],1)
     drawReader = provMap.load()
-    borderMat = Image.open("Output/RiverBorderMat.png")
+    if "river" in name:
+        borderMat = Image.open("Output/RiverBorderMat.png")
+    else:
+        borderMat = Image.open("Output/SeaBorderMat.png")
     riverBorderMat = borderMat.load()
     colorList = []
     for y in yRange:
@@ -140,7 +182,13 @@ def getBorderIDs():
         for prov in provList:
             if color[0] == prov.red and color[1] == prov.green and color[2] == prov.blue:
                 print(prov.name)
-                borderIDList.append(prov.id)
+                if "river" in name:
+                    borderIDList.append(prov.id)
+                else:
+                    try:
+                        borderIDList.remove(prov.id)
+                    except:
+                        pass
                 break;
     pass
 def writeBarronyNames():
@@ -184,15 +232,34 @@ def writeBarronyNames():
 readProvinceDeff()
 getRiverProvinces()
 riverList = list(dict.fromkeys(riverList))
-total = len(riverList)
-print(total)
+
 for id in riverList:
     for prov in provList:
         if id == prov.id:
             #print(prov.name)
             riverProvList.append(prov)
             break
-drawRiverMat(riverProvList)
-drawRiverBorderMat()
-getBorderIDs()
+    pass
+total = len(riverProvList)
+print(total)
+drawRiverMat(riverProvList,"RiverMat")
+drawRiverBorderMat("RiverBorderMat")
+getBorderIDs("river")
+
+#for removeing baronies that border seas from the list
+if removeCostal:
+    seaList = list(dict.fromkeys(seaList))
+    for id in seaList:
+        for prov in provList:
+            if id == prov.id:
+                #print(prov.name)
+                seaProvList.append(prov)
+                break
+        pass
+    total = len(seaProvList)
+    print(total)
+    drawRiverMat(seaProvList, "SeaMat")
+    drawRiverBorderMat("SeaBorderMat")
+    getBorderIDs("sea")
+
 writeBarronyNames()
