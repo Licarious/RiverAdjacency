@@ -116,9 +116,7 @@ def drawMat(riverProvList,name):
     drawingMap.putalpha(0)
     riverMat = drawingMap.load()
     z=0
-    dis = 1
-    if "sea" in name:
-        dis *= 4 
+    dis = 5
     for prov in riverProvList:
         provinceEnd = False
         z+=1
@@ -138,7 +136,7 @@ def drawMat(riverProvList,name):
 def drawBorderMat(name):
     xRange= range(0,provMap.size[0],1)
     yRange= range(0,provMap.size[1],1)
-    if "river" in name:
+    if "River" in name:
         tmpDrawingMap = Image.open("Output/RiverMat.png")
     else:
         tmpDrawingMap = Image.open("Output/SeaMat.png")

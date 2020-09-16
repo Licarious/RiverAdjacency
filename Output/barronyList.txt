@@ -674,6 +674,7 @@
 		this = title:b_golden_hills.title_province
 		this = title:b_siyahtepe.title_province
 		this = title:b_ust-donvokhi.title_province
+		this = title:b_kazarki.title_province
 		this = title:b_kazanskaya.title_province
 		this = title:b_boguchar.title_province
 		this = title:b_sarysyn.title_province
@@ -681,6 +682,7 @@
 		this = title:b_kamyshin.title_province
 		this = title:b_yelan.title_province
 	#k_caucasus
+		this = title:b_sarkel.title_province
 		this = title:b_aksay.title_province
 		this = title:b_semikarakary.title_province
 		this = title:b_khazaran.title_province
