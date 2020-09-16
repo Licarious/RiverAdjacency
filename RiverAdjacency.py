@@ -41,7 +41,7 @@ def getRiverProvinces():
     for line in defaultMap:
         if line.strip().startswith("#"):
             pass
-        elif "river_provinces" in line:
+        elif line.strip().startswith("river_provinces"):
             if "RANGE" in line:
                 x1=0
                 x2=0
