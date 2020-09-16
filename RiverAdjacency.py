@@ -1,4 +1,5 @@
 from PIL import Image
+from os import path
 
 class ProvinceDefinition:
     id = 0
@@ -22,6 +23,7 @@ landedTitles = open("Input/00_landed_titles.txt",'r',encoding='utf-8',errors='ig
 borderIDList = []
 total=0
 removeCostal = True
+regenerateMats = True
 
 def readProvinceDeff():
     for province in mapDefinition:
@@ -115,7 +117,7 @@ def drawRiverMat(riverProvList,name):
     riverMat = drawingMap.load()
     z=0
     dis = 1
-    if sea in name:
+    if "sea" in name:
         dis *= 4 
     for prov in riverProvList:
         provinceEnd = False
@@ -242,8 +244,10 @@ for id in riverList:
     pass
 total = len(riverProvList)
 print(total)
-drawRiverMat(riverProvList,"RiverMat")
-drawRiverBorderMat("RiverBorderMat")
+if regenerateMats or not path.exists("Output\RiverMat.png"):
+    drawRiverMat(riverProvList,"RiverMat")
+if regenerateMats or not path.exists("Output\RiverBorderMat.png"):
+    drawRiverBorderMat("RiverBorderMat")
 getBorderIDs("river")
 
 #for removeing baronies that border seas from the list
@@ -258,8 +262,10 @@ if removeCostal:
         pass
     total = len(seaProvList)
     print(total)
-    drawRiverMat(seaProvList, "SeaMat")
-    drawRiverBorderMat("SeaBorderMat")
+    if regenerateMats or not path.exists("Output\SeaMat.png"):
+        drawRiverMat(seaProvList, "SeaMat")
+    if regenerateMats or not path.exists("Output\SeaBorderMat.png"):
+        drawRiverBorderMat("SeaBorderMat")
     getBorderIDs("sea")
 
 writeBarronyNames()
