@@ -108,7 +108,7 @@ def getRiverProvinces():
                             pass
                 #print(line)
     pass      
-def drawRiverMat(riverProvList,name):
+def drawMat(riverProvList,name):
     xRange= range(0,provMap.size[0],1)
     yRange= range(0,provMap.size[1],1)
     drawReader = provMap.load()
@@ -135,7 +135,7 @@ def drawRiverMat(riverProvList,name):
                 if prov.lastKnownY > -1 and y > prov.lastKnownY + (provMap.size[1] * dis/256):
                     provinceEnd = True
     drawingMap.save("Output/%s.png"%name)
-def drawRiverBorderMat(name):
+def drawBorderMat(name):
     xRange= range(0,provMap.size[0],1)
     yRange= range(0,provMap.size[1],1)
     if "river" in name:
@@ -197,11 +197,17 @@ def writeBarronyNames():
     barronyList = open("Output/barronyList.txt", "w", encoding='utf-8-sig')
     indintation = 0
     tmpTitle = ""
+    tmpEmpire = ""
+    tmpKingdon = ""
     for line in landedTitles:
         if indintation == 0:
             if line.strip().startswith("e_"):
                 print(line.split(" ")[0])
-                barronyList.write("#%s\n"%line.split(" ")[0])
+                #barronyList.write("#%s\n"%line.split(" ")[0])
+                tmpEmpire = line.split(" ")[0]
+        if indintation == 1:
+            if line.strip().startswith("k_"):
+                tmpKingdon = line.strip().split(" ")[0]
         if indintation == 4:
             if line.strip().startswith("b_"):
                 tmpTitle = line.strip().split(" ")[0]
@@ -213,7 +219,13 @@ def writeBarronyNames():
                         tmpID = int(word)
                         if tmpID in borderIDList:
                             print("\t%s"%tmpTitle)
-                            barronyList.write("\tthis = title:%s.title_province\n"%tmpTitle)
+                            if tmpEmpire != "":
+                                barronyList.write("#%s\n"%tmpEmpire)
+                                tmpEmpire = ""
+                            if tmpKingdon != "":
+                                barronyList.write("\t#%s\n"%tmpKingdon)
+                                tmpKingdon = ""
+                            barronyList.write("\t\tthis = title:%s.title_province\n"%tmpTitle)
                     except:
                         pass
 
@@ -245,9 +257,9 @@ for id in riverList:
 total = len(riverProvList)
 print(total)
 if regenerateMats or not path.exists("Output\RiverMat.png"):
-    drawRiverMat(riverProvList,"RiverMat")
+    drawMat(riverProvList,"RiverMat")
 if regenerateMats or not path.exists("Output\RiverBorderMat.png"):
-    drawRiverBorderMat("RiverBorderMat")
+    drawBorderMat("RiverBorderMat")
 getBorderIDs("river")
 
 #for removeing baronies that border seas from the list
@@ -263,9 +275,9 @@ if removeCostal:
     total = len(seaProvList)
     print(total)
     if regenerateMats or not path.exists("Output\SeaMat.png"):
-        drawRiverMat(seaProvList, "SeaMat")
+        drawMat(seaProvList, "SeaMat")
     if regenerateMats or not path.exists("Output\SeaBorderMat.png"):
-        drawRiverBorderMat("SeaBorderMat")
+        drawBorderMat("SeaBorderMat")
     getBorderIDs("sea")
 
 writeBarronyNames()
