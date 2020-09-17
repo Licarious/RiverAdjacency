@@ -12,6 +12,7 @@ class ProvinceDefinition:
 
 riverList = []
 seaList = []
+impasableList = []
 tmpRiverList = []
 riverProvList = []
 seaProvList = []
@@ -24,6 +25,7 @@ borderIDList = []
 total=0
 removeCostal = True
 regenerateMats = True
+includeLakes = False
 
 def readProvinceDeff():
     for province in mapDefinition:
@@ -42,71 +44,49 @@ def readProvinceDeff():
             except:
                 pass
     pass
+def getRangeList(line, tmpList):
+    if "RANGE" in line:
+        x1=0
+        x2=0
+        #print(line)
+        words = line.split(" ")
+        for word in words:
+            if "#" in word:
+                break
+            else:
+                try:
+                    if x1 == 0:
+                        x1 = int(word)
+                    elif x2 == 0:
+                        x2 = int(word)
+                except:
+                    pass
+        for i in range(x1,x2+1):
+            tmpList.append(i)
+        #print("%s,%s"%(x1,x2))
+    elif "LIST" in line:
+        words = line.split(" ")
+        for word in words:
+            if "#" in word:
+                break
+            else:
+                try:
+                    tmpList.append(int(word))
+                except:
+                    pass
+    pass
 def getRiverProvinces():
     for line in defaultMap:
         if line.strip().startswith("#"):
             pass
         elif line.strip().startswith("sea_zones"):
-            if "RANGE" in line:
-                x1=0
-                x2=0
-                #print(line)
-                words = line.split(" ")
-                for word in words:
-                    if "#" in word:
-                        break
-                    else:
-                        try:
-                            if x1 == 0:
-                                x1 = int(word)
-                            elif x2 == 0:
-                                x2 = int(word)
-                        except:
-                            pass
-                for i in range(x1,x2+1):
-                    seaList.append(i)
-                #print("%s,%s"%(x1,x2))
-            elif "LIST" in line:
-                words = line.split(" ")
-                for word in words:
-                    if "#" in word:
-                        break
-                    else:
-                        try:
-                            seaList.append(int(word))
-                        except:
-                            pass
+            getRangeList(line, seaList)
         elif line.strip().startswith("river_provinces"):
-            if "RANGE" in line:
-                x1=0
-                x2=0
-                #print(line)
-                words = line.split(" ")
-                for word in words:
-                    if "#" in word:
-                        break
-                    else:
-                        try:
-                            if x1 == 0:
-                                x1 = int(word)
-                            elif x2 == 0:
-                                x2 = int(word)
-                        except:
-                            pass
-                for i in range(x1,x2+1):
-                    riverList.append(i)
-                #print("%s,%s"%(x1,x2))
-            elif "LIST" in line:
-                words = line.split(" ")
-                for word in words:
-                    if "#" in word:
-                        break
-                    else:
-                        try:
-                            riverList.append(int(word))
-                        except:
-                            pass
-                #print(line)
+            getRangeList(line, riverList)
+        elif includeLakes and line.strip().startswith("lakes"):
+            getRangeList(line, riverList)
+        elif line.strip().startswith("impassable_mountains"):
+            getRangeList(line, impasableList)
     pass      
 def drawMat(riverProvList,name):
     xRange= range(0,provMap.size[0],1)
@@ -117,21 +97,19 @@ def drawMat(riverProvList,name):
     riverMat = drawingMap.load()
     z=0
     dis = 5
+
+    tupleList = []
     for prov in riverProvList:
-        provinceEnd = False
-        z+=1
-        print("%s \t-\t %s/%s"%(prov.name,z,total))
-        for y in yRange:
-            if provinceEnd:
-                break
-            else:
-                for x in xRange:
-                    if drawReader[x,y] == (prov.red, prov.green, prov.blue):
-                        riverMat[x,y] = (0,0,0)
-                        prov.lastKnownY = y
-                        #print("%s - %i,%i"%(prov.name,x,y))
-                if prov.lastKnownY > -1 and y > prov.lastKnownY + (provMap.size[1] * dis/256):
-                    provinceEnd = True
+        tupleList.append((prov.red,prov.green,prov.blue))
+
+    #print(tupleList)
+
+    for y in yRange:
+        if y%128 ==0:
+            print("%i%%"%((y*100)/provMap.size[1]))
+        for x in xRange:
+            if drawReader[x,y] in tupleList:
+                riverMat[x,y] = (0,0,0)
     drawingMap.save("Output/%s.png"%name)
 def drawBorderMat(name):
     xRange= range(0,provMap.size[0],1)
@@ -240,11 +218,17 @@ def writeBarronyNames():
                     #print("c: "+element)
                     break
     pass
-
+def removeImpasible(tmpList, impasableList):
+    for id in impasableList:
+        try:
+            tmpList.remove(id)
+        except:
+            pass
+    pass    
 readProvinceDeff()
 getRiverProvinces()
 riverList = list(dict.fromkeys(riverList))
-
+removeImpasible(riverList, impasableList)
 for id in riverList:
     for prov in provList:
         if id == prov.id:
@@ -263,6 +247,7 @@ getBorderIDs("river")
 #for removeing baronies that border seas from the list
 if removeCostal:
     seaList = list(dict.fromkeys(seaList))
+    removeImpasible(seaList, impasableList)
     for id in seaList:
         for prov in provList:
             if id == prov.id:
