@@ -1,5 +1,6 @@
 from PIL import Image
 from os import path
+import time
 
 class ProvinceDefinition:
     id = 0
@@ -99,17 +100,34 @@ def drawMat(riverProvList,name):
     dis = 5
 
     tupleList = []
+    lastY = []
     for prov in riverProvList:
         tupleList.append((prov.red,prov.green,prov.blue))
+        lastY.append(-1)
 
     #print(tupleList)
+    tmpTotal = len(tupleList)
+    count = 0
 
     for y in yRange:
         if y%128 ==0:
-            print("%i%%"%((y*100)/provMap.size[1]))
+            #print("%i%%"%((y*100)/provMap.size[1]))
+            for i, prov in enumerate(lastY):
+                if prov>-1 and prov<y-(provMap.size[1]/40):
+                    #print(tupleList[i])
+                    del lastY[i]
+                    del tupleList[i]
+                    i-=1
+                    count+=1
+            if tmpTotal>0 and count>0:
+                #print(count)
+                print("%f%%"%((count*1000/tmpTotal)/10))
+            if tupleList==0:
+                break
         for x in xRange:
             if drawReader[x,y] in tupleList:
-                riverMat[x,y] = (0,0,0)
+                riverMat[x,y] = (0,0,0,255)
+                lastY[tupleList.index(drawReader[x,y])] = y
     drawingMap.save("Output/%s.png"%name)
 def drawBorderMat(name):
     xRange= range(0,provMap.size[0],1)
@@ -128,16 +146,16 @@ def drawBorderMat(name):
                 #print("%s,%s"%(x,y))
                 if y>0:
                     if not drawReader[x,y-1] == (0,0,0,255):
-                        riverBorderMat[x,y-1] = (0,0,0)
+                        riverBorderMat[x,y-1] = (0,0,0,255)
                 if y<provMap.size[1]-1:
                     if not drawReader[x,y+1] == (0,0,0,255):
-                        riverBorderMat[x,y+1] = (0,0,0)
+                        riverBorderMat[x,y+1] = (0,0,0,255)
                 if x>0:
                     if not drawReader[x-1,y] == (0,0,0,255):
-                        riverBorderMat[x-1,y] = (0,0,0)
+                        riverBorderMat[x-1,y] = (0,0,0,255)
                 if x<provMap.size[0]-1:
                     if not drawReader[x+1,y] == (0,0,0,255):
-                        riverBorderMat[x+1,y] = (0,0,0)
+                        riverBorderMat[x+1,y] = (0,0,0,255)
                 #print("%s - %i,%i"%(prov.name,x,y))
     drawingBorderMap.save("Output/%s.png"%name)
 def getBorderIDs(name):
@@ -175,15 +193,20 @@ def writeBarronyNames():
     tmpTitle = ""
     tmpEmpire = ""
     tmpKingdon = ""
+    tmpDutchy = ""
+    count = 0
     for line in landedTitles:
         if indintation == 0:
             if line.strip().startswith("e_"):
-                print(line.split(" ")[0])
+                #print(line.split(" ")[0])
                 #barronyList.write("#%s\n"%line.split(" ")[0])
                 tmpEmpire = line.split(" ")[0]
         if indintation == 1:
             if line.strip().startswith("k_"):
                 tmpKingdon = line.strip().split(" ")[0]
+        if indintation == 2:
+            if line.strip().startswith("d_"):
+                tmpDutchy = line.strip().split(" ")[0]
         if indintation == 4:
             if line.strip().startswith("b_"):
                 tmpTitle = line.strip().split(" ")[0]
@@ -194,14 +217,20 @@ def writeBarronyNames():
                     try:
                         tmpID = int(word)
                         if tmpID in borderIDList:
-                            print("\t%s"%tmpTitle)
                             if tmpEmpire != "":
+                                print(tmpEmpire)
                                 barronyList.write("#%s\n"%tmpEmpire)
                                 tmpEmpire = ""
                             if tmpKingdon != "":
+                                print(tmpKingdon)
                                 barronyList.write("\t#%s\n"%tmpKingdon)
                                 tmpKingdon = ""
+                            if tmpDutchy != "":
+                                #barronyList.write("\t#%s\n"%tmpDutchy)
+                                tmpDutchy = ""
+                            print("\t%s"%tmpTitle)
                             barronyList.write("\t\tthis = title:%s.title_province\n"%tmpTitle)
+                            count+=1
                     except:
                         pass
 
@@ -217,6 +246,7 @@ def writeBarronyNames():
                 elif "#" in element:
                     #print("c: "+element)
                     break
+    print("total baronies: %i"%count)
     pass
 def removeImpasible(tmpList, impasableList):
     for id in impasableList:
@@ -225,6 +255,8 @@ def removeImpasible(tmpList, impasableList):
         except:
             pass
     pass    
+
+ts = time.time()
 readProvinceDeff()
 getRiverProvinces()
 riverList = list(dict.fromkeys(riverList))
@@ -237,7 +269,7 @@ for id in riverList:
             break
     pass
 total = len(riverProvList)
-print(total)
+print("%i river/lakes"%total)
 if regenerateMats or not path.exists("Output\RiverMat.png"):
     drawMat(riverProvList,"RiverMat")
 if regenerateMats or not path.exists("Output\RiverBorderMat.png"):
@@ -256,7 +288,7 @@ if removeCostal:
                 break
         pass
     total = len(seaProvList)
-    print(total)
+    print("%i Seas"%total)
     if regenerateMats or not path.exists("Output\SeaMat.png"):
         drawMat(seaProvList, "SeaMat")
     if regenerateMats or not path.exists("Output\SeaBorderMat.png"):
@@ -264,3 +296,5 @@ if removeCostal:
     getBorderIDs("sea")
 
 writeBarronyNames()
+ts2 = time.time()
+print("%g Seconds"%(ts2 - ts))
