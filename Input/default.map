@@ -75,9 +75,14 @@ sea_zones = LIST { 944 1470 }
 sea_zones = LIST { 8623 8624 8625 }
 
 #MNR2 Seas
-#sea_zones = LIST { 976 } #IMPASSABLE ATLANTIC EUROPE-AFRICA
-sea_zones = LIST { 1076 } # Lake Chad
-sea_zones = LIST { 1305 } # Balkhash Lake
+#sea_zones = LIST { 976 } 			#IMPASSABLE ATLANTIC EUROPE-AFRICA
+sea_zones = LIST { 963 } 			# Vanern (Gota Alv)
+sea_zones = LIST { 962 } 			# Vattern (Motala Strom)
+sea_zones = LIST { 1012 } 			# Lake Peipsi (Narva)
+sea_zones = LIST { 1076 } 			# Lake Chad
+sea_zones = LIST { 1305 } 			# Balkhash Lake
+sea_zones = LIST { 1494 } 			# Lake Baikal
+sea_zones = RANGE { 10033 10038 } 	# Caspian Sea ex
 
 ###############
 # MAJOR RIVERS - 173
@@ -126,7 +131,7 @@ river_provinces = RANGE { 8092 8096 }	# Niger
 river_provinces = LIST { 626 689 1063 1065 1066 1067 1077 1078 1079 1081 1082 1083 1084 1487 5510 5511 6125 } # 17
 river_provinces = LIST { 8560 8568 8571 8572 8573 8577 8602 } # 7
 
-#MNR2 Rivers - 356
+#MNR2 Rivers - 373		Start 9660 - End 10039
 #East Africa - 16
 river_provinces = RANGE { 9660 9675 }	# Nile 16
 #Iberia - 14
@@ -156,18 +161,22 @@ river_provinces = RANGE { 9754 9758 } 	# Weser 5
 river_provinces = RANGE { 9759 9766 } 	# Elbe 8
 river_provinces = RANGE { 9767 9777 } 	# Oder 11
 river_provinces = LIST { 10016 } 		# Oder 1
-#Eastern Europe - 24
+#Eastern Europe - 31
 river_provinces = RANGE { 9778 9785 } 	# Vistula 8
 river_provinces = RANGE { 9786 9790 } 	# Neman 5
 river_provinces = LIST { 9791 } 		# Vyg 1
 river_provinces = RANGE { 9792 9795 } 	# Northern Dvina 4
 river_provinces = RANGE { 9796 9799 } 	# Southern Bug 4
 river_provinces = RANGE { 10014 10015 } # Narva 2
+river_provinces = RANGE { 10026 10028 } # Volga ex 3
+river_provinces = RANGE { 10029 10032 } # Don ex 4
+river_provinces = LIST { 10039 } 		# Don fix 1
 #Scandinavia - 5
 river_provinces = RANGE { 9800 9802 } 	# Gota Alv 3
 river_provinces = RANGE { 9803 9804 } 	# Motala Strom 2
-#Danube - 40
+#Danube - 42
 river_provinces = RANGE { 9805 9844 } 	# Danube 40
+river_provinces = LIST { 10017 10018 } # Danube 2
 #Middle East - 30
 river_provinces = RANGE { 9845 9867 } 	# Tigris-Euphrates 23
 river_provinces = RANGE { 9868 9874 } 	# Kura 7
@@ -198,21 +207,21 @@ river_provinces = RANGE { 9988 10001 } 	# Niger 14
 river_provinces = RANGE { 10002 10006 } # Chari 5
 river_provinces = LIST { 10007 } 		# Bahr el Ghazal 1
 river_provinces = RANGE { 10008 10013 } # Yobe 6
+#Northern Asia - 7
+river_provinces = RANGE { 10019 10021 }	# Angara 3
+river_provinces = RANGE { 10022 10025 }	# Selenge 4
 
 #MNR2 Overrides
 river_provinces = LIST { 955 } 			# Saimaa (Vig)
-river_provinces = LIST { 963 } 			# Vanern (Gota Alv)
-river_provinces = LIST { 962 } 			# Vattern (Motala Strom)
 river_provinces = LIST { 8738 } 		# Sarygamysh Lake (Uzboy)
-river_provinces = LIST { 1012 } 		# Lake Peipsi (Narva)
 
 ########
 # LAKES
 ########
-lakes = LIST { 943 956 957 979 983 1018 1026 1069 1080 1088 1107 1108 1348 1486 3265 8736 8737 }
+lakes = LIST { 943 956 957 979 983 1018 1026 1069 1080 1088 1107 1108 1348 1486 1488 3265 8736 8737 }
 lakes = LIST { 961 } #Hjälmaren
 lakes = RANGE { 1472 1484 }
-lakes = RANGE { 1488 1494 }
+lakes = RANGE { 1490 1493 }
 lakes = RANGE { 1496 1498 }
 lakes = LIST { 5854 }	#Bjarmaland lakes
 lakes = LIST { 5858 }	#Western Siberian lakes
@@ -282,7 +291,7 @@ impassable_mountains = LIST { 7796 7942 7943 }
 impassable_mountains = RANGE { 7936 7940 }
 
 #Kazakh Steppe
-impassable_mountains = LIST { 1490 7352 7353 7354 8710 }
+impassable_mountains = LIST { 7352 7353 7354 8710 }
 
 #Mongolia, Tarim & Dzungaria
 impassable_mountains = LIST { 7512 } #Gurbantünggüt desert

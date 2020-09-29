@@ -1,6 +1,7 @@
 from PIL import Image
 from os import path
 import time
+import re
 
 class ProvinceDefinition:
     id = 0
@@ -25,7 +26,6 @@ landedTitles = open("Input/00_landed_titles.txt",'r',encoding='utf-8',errors='ig
 borderIDList = []
 total=0
 removeCostal = True
-regenerateMats = True
 includeLakes = False
 
 def readProvinceDeff():
@@ -50,7 +50,11 @@ def getRangeList(line, tmpList):
         x1=0
         x2=0
         #print(line)
-        words = line.split(" ")
+        tmpline = line.replace("{", " ")
+        tmpline = tmpline.replace("}", " ")
+        tmpline = tmpline.replace("#", " # ")
+        words = tmpline.split(" ")
+        #print(words)
         for word in words:
             if "#" in word:
                 break
@@ -66,7 +70,11 @@ def getRangeList(line, tmpList):
             tmpList.append(i)
         #print("%s,%s"%(x1,x2))
     elif "LIST" in line:
-        words = line.split(" ")
+        tmpline = line.replace("{", " ")
+        tmpline = tmpline.replace("}", " ")
+        tmpline = tmpline.replace("#", " # ")
+        words = tmpline.split(" ")
+        #print(words)
         for word in words:
             if "#" in word:
                 break
@@ -102,7 +110,7 @@ def drawMat(riverProvList,name):
     tupleList = []
     lastY = []
     for prov in riverProvList:
-        tupleList.append((prov.red,prov.green,prov.blue))
+        tupleList.append((prov.red,prov.green,prov.blue,255))
         lastY.append(-1)
 
     #print(tupleList)
@@ -119,11 +127,13 @@ def drawMat(riverProvList,name):
                     del tupleList[i]
                     i-=1
                     count+=1
+            if tupleList==0:
+                break
             if tmpTotal>0 and count>0:
                 #print(count)
                 print("%f%%"%((count*1000/tmpTotal)/10))
-            if tupleList==0:
-                break
+            else:
+                print("%g%%"%(y*100/provMap.size[1]))
         for x in xRange:
             if drawReader[x,y] in tupleList:
                 riverMat[x,y] = (0,0,0,255)
@@ -173,7 +183,7 @@ def getBorderIDs(name):
             if riverBorderMat[x,y] == (0,0,0,255):
                 if not provMap.getpixel((x,y)) in colorList:
                     colorList.append(provMap.getpixel((x,y)))
-                    print(provMap.getpixel((x,y)))
+                    #print(provMap.getpixel((x,y)))
     for color in colorList:
         for prov in provList:
             if color[0] == prov.red and color[1] == prov.green and color[2] == prov.blue:
@@ -270,10 +280,8 @@ for id in riverList:
     pass
 total = len(riverProvList)
 print("%i river/lakes"%total)
-if regenerateMats or not path.exists("Output\RiverMat.png"):
-    drawMat(riverProvList,"RiverMat")
-if regenerateMats or not path.exists("Output\RiverBorderMat.png"):
-    drawBorderMat("RiverBorderMat")
+drawMat(riverProvList,"RiverMat")
+drawBorderMat("RiverBorderMat")
 getBorderIDs("river")
 
 #for removeing baronies that border seas from the list
@@ -289,10 +297,8 @@ if removeCostal:
         pass
     total = len(seaProvList)
     print("%i Seas"%total)
-    if regenerateMats or not path.exists("Output\SeaMat.png"):
-        drawMat(seaProvList, "SeaMat")
-    if regenerateMats or not path.exists("Output\SeaBorderMat.png"):
-        drawBorderMat("SeaBorderMat")
+    drawMat(seaProvList, "SeaMat")
+    drawBorderMat("SeaBorderMat")
     getBorderIDs("sea")
 
 writeBarronyNames()
